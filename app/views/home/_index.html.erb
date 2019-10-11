@@ -1,0 +1,64 @@
+<main role="main" class="container ">
+	<div class="row mb-2">
+		<div class="col-md-8 ">
+			<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				<table class="table ">
+					<thead class="table-dark">
+					<tr>
+						<th scope="col">tarih</th>
+						<th scope="col">saat</th>
+						<th scope="col">maç</th>
+						<th scope="col">1</th>
+						<th scope="col">0</th>
+						<th scope="col">2</th>
+					</tr>
+					</thead>
+				<tbody>
+				<% count = 0 %>
+				<% while count < 5  %>
+
+				<tr class="table-light">
+				<th scope="row"><%= @iddaa["data"]["events"][count]["ede"] %></th>
+					<td><%= @iddaa["data"]["events"][count]["edh"] %></td>
+					<td><%= @iddaa["data"]["events"][count]["en"] %> </td>
+
+					<td><a class="link" href=""><%= @iddaa["data"]["events"][count]["m"][0]["o"][0]["odd"] %></a></td>
+					<td><a class="link" href=""><%= @iddaa["data"]["events"][count]["m"][0]["o"][1]["odd"] %></td></a>
+					<td><a class="link" href=""><%= @iddaa["data"]["events"][count]["m"][0]["o"][2]["odd"] %></td></a>
+					
+					
+				</tr>
+				<% count+=1 %>
+				<% end %>
+
+				</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="col-md-4">
+	<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light">
+		<div class="col p-4 d-flex flex-column position-static">
+			<p class="text-primary">iddaa kuponum</p>
+		<% count = 0 %>
+			<% while count < 2  %>
+
+			<tr class="table-light">
+			<th scope="row"></th>
+				<td><%= @iddaa["data"]["events"][count]["en"] %> </td> <br>
+				<td><%= @iddaa["data"]["events"][count]["m"][0]["mn"] %></td>  
+				<td><%= @iddaa["data"]["events"][count]["m"][0]["o"][1]["onu"] %></td>
+				<td><%= @iddaa["data"]["events"][count]["m"][0]["o"][2]["odd"] %></td>
+			</tr>
+			<p>--------------------------------------------------</p>
+			<% count+=1 %>
+		<% end %>
+	</div>
+</div>
+
+	</div>
+</main>
+
+
+
+
+
